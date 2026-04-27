@@ -1,0 +1,123 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    font: "JetBrainsMono Nerd Font 13";
+    display-drun: " ";
+    display-run: " ";
+    drun-display-format: "{name}";
+}
+
+* {
+    /* Твоя палитра */
+    bg: #0b1717;              
+    bg-alt: #556b6b;          
+    fg: #556b6b;              
+    accent: #556b6b;          
+    urgent: #e34327;          
+    
+    background-color: transparent;
+    text-color: @fg;
+    margin: 0;
+    padding: 0;
+}
+
+window {
+    width: 30%;
+    background-color: @bg;
+    border: 2px;
+    border-color: @bg-alt;
+    border-radius: 8px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar, listview ];
+    padding: 24px;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    background-color: transparent;
+    padding: 0 0 16px 0;
+    border: 0 0 2px 0;
+    border-color: @bg-alt;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @accent;
+    padding: 0 16px 0 0;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @accent;
+    placeholder: "Search...";
+    placeholder-color: @bg-alt;
+}
+
+listview {
+    fixed-height: false;
+    dynamic: true;
+    scrollbar: false;
+    lines: 8;
+    columns: 1;
+    spacing: 8px;
+    padding: 16px 0 0 0;
+    background-color: transparent;
+}
+
+element {
+    padding: 10px 16px;
+    border-radius: 4px;
+    background-color: transparent;
+    text-color: @fg;
+    cursor: pointer;
+}
+
+/* Принудительно чистим фон иконок и текста, чтобы не было квадратов */
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 24px;
+    cursor: inherit;
+    padding: 0 16px 0 0;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+    cursor: inherit;
+}
+
+/* Обычное состояние элементов */
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+/* Выделенный элемент (Selected) */
+element selected.normal {
+    /* Легкий отсвет, чтобы строка выделялась целиком, но без резких границ */
+    background-color: rgba(54, 209, 255, 0.08); 
+    text-color: @accent;
+    
+    /* Твоя полоска слева */
+    border: 0 0 0 4px;
+    border-color: @accent;
+}
+
+/* Сброс всех прочих системных состояний (active, urgent) */
+element normal.urgent, element alternate.urgent, element selected.urgent,
+element normal.active, element alternate.active, element selected.active {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+/* Чтобы при наведении тоже всё было красиво */
+element-text selected.normal, 
+element-icon selected.normal {
+    background-color: transparent;
+}

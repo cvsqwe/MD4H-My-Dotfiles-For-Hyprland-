@@ -1,0 +1,29 @@
+# Основные настройки
+max-visible=5
+sort=-time
+layer=overlay
+width=300
+height=110
+outer-margin=10
+padding=15
+font=JetBrainsMono Nerd Font 10
+border-size=2
+border-radius=10
+
+# Твоя цветовая схема (Waybar Style)
+background-color=#0b1717
+text-color=#a0b4b4
+border-color=#1b3232
+progress-color=source #36d1ff
+
+# Высокий приоритет (например, ошибки или ахтунг)
+[urgency=high]
+border-color=#e34327
+text-color=#ffffff
+default-timeout=0
+
+# Низкий приоритет
+[urgency=low]
+border-color=#1b3232
+text-color=#556b6b
+default-timeout=5000
