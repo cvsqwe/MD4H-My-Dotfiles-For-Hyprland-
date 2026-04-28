@@ -81,7 +81,7 @@
 ## MD4H — My Dotfiles for Hyprland
 
 <p align="center">
-  <img src="screenshot/1.png" alt="preview" width="800"/>
+  <img src="new.png" alt="preview" width="800"/>
 </p>
 
 ---
